@@ -24,6 +24,8 @@ py manage.py runserver
 
 Add CSS styling
 
+Fix cashier Bill object logic
+
 Client GUI
 
 Fix some routing
