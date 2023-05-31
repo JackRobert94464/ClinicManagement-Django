@@ -8,7 +8,7 @@ git clone https://github.com/JackRobert94464/ClinicManagement-Django
 Get inside the virtual environment from the working directory
 .\Scripts\activate
 
-ClinicManagementDjango is obsolete! Please use version 2 (ClinicManagementDjangov2) instead!
+## ClinicManagementDjango is obsolete! Please use version 2 (ClinicManagementDjangov2) instead!
 
 Running the server is as simple as
 cd ClinicManagementDjangov2
