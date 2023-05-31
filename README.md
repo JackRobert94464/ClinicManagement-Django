@@ -26,3 +26,4 @@ Add CSS styling
 
 Client GUI
 
+Fix some routing
