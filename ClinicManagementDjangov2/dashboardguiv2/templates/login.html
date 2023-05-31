@@ -1,20 +1,25 @@
-<h2>Login</h2>
-<form method="post" action="">
-  {% csrf_token %}
-  <div class="mb-3">
-    <label for="username" class="form-label">Username</label>
-    <input type="text" class="form-control" id="username" name="username" required>
-  </div>
-  <div class="mb-3">
-    <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control" id="password" name="password" required>
-  </div>
-  <button type="submit" class="btn btn-primary">Login</button>
-</form>
-<form action="{% url 'dashboardguiv2:register' %}" method="post">
-  {% csrf_token %}
-  <button type="submit">Create a new account</button>
-</form>
-{% if message %}
-<p>{{ message }}</p>
-{% endif %}
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Login</h2>
+  <form method="post" action="">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+  <form action="{% url 'dashboardguiv2:register' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Create a new account</button>
+  </form>
+  {% if message %}
+  <p>{{ message }}</p>
+  {% endif %}
+{% endblock %}
+

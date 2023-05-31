@@ -324,22 +324,28 @@ def estimate_prices(request):
 
 
 from django.shortcuts import render, get_object_or_404
-from .models import Patient, Billings, Payment
+from .models import Patient, Bill, Payment
 
-def collect_fees(request, patient_id):
+def collect_fees(request, patient_id=None):
+    if patient_id is None:
+        patients = Patient.objects.all()
+        return render(request, 'select_patient.html', {'patients': patients})
+
     patient = get_object_or_404(Patient, pk=patient_id)
-    billings = Billings.objects.filter(patient=patient)
+    bill = Bill.objects.get(patient=patient)
 
     if request.method == 'POST':
         amount_paid = request.POST.get('amount_paid')
-        payment = Payment(billing=billings[1], amount_paid=amount_paid)  # Assuming you want to associate the payment with the first billing
+        payment = Payment(bill=bill, amount_paid=amount_paid)
         payment.save()
 
-        billings.update(paid=True)
+        bill.paid = True
+        bill.save()
 
         return render(request, 'payment_success.html', {'patient': patient})
 
-    return render(request, 'collect_fees.html', {'patient': patient, 'billings': billings})
+    return render(request, 'collect_fees.html', {'patient': patient, 'bill': bill})
+
 
 
 from django.shortcuts import render

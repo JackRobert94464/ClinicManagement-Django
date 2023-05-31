@@ -1,3 +1,6 @@
-<h1>Payment Successful</h1>
+{% extends 'base.html' %}
 
+{% block content %}
+<h1>Payment Successful</h1>
 <p>Payment successfully recorded for patient: {{ patient.name }}</p>
+{% endblock %}

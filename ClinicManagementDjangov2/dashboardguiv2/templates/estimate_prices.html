@@ -1,23 +1,27 @@
-<h1>Estimate Prices</h1>
+{% extends 'base.html' %}
 
-<form method="POST">
-  {% csrf_token %}
-  {{ form.as_p }}
+{% block content %}
+  <h1>Estimate Prices</h1>
 
-  {% if drug %}
-    <h3>Drug Information:</h3>
-    <p><strong>Name:</strong> {{ drug.name }}</p>
-    <p><strong>Price:</strong> {{ drug.price }}</p>
-  {% endif %}
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
 
-  {% if total_price %}
-    <h3>Total Price:</h3>
-    <p>{{ total_price }}</p>
-  {% endif %}
+    {% if drug %}
+      <h3>Drug Information:</h3>
+      <p><strong>Name:</strong> {{ drug.name }}</p>
+      <p><strong>Price:</strong> {{ drug.price }}</p>
+    {% endif %}
 
-  {% if error_message %}
-    <p>{{ error_message }}</p>
-  {% endif %}
+    {% if total_price %}
+      <h3>Total Price:</h3>
+      <p>{{ total_price }}</p>
+    {% endif %}
 
-  <button type="submit">Estimate</button>
-</form>
+    {% if error_message %}
+      <p>{{ error_message }}</p>
+    {% endif %}
+
+    <button type="submit">Estimate</button>
+  </form>
+{% endblock %}

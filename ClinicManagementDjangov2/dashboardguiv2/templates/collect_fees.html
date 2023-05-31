@@ -1,15 +1,19 @@
-<h1>Collect Fees</h1>
+{% extends 'base.html' %}
 
-<h3>Patient: {{ patient.name }}</h3>
+{% block content %}
+  <h1>Collect Fees</h1>
 
-<p>Exam Fee: ${{ bill.exam_fee }}</p>
-<p>Drug Fee: ${{ bill.drug_fee }}</p>
-<p>Total Fee: ${{ bill.total_fee }}</p>
+  <h3>Patient: {{ patient.name }}</h3>
 
-<form method="POST">
-  {% csrf_token %}
-  <label for="amount_paid">Amount Paid:</label>
-  <input type="text" name="amount_paid" id="amount_paid">
-  <br>
-  <button type="submit">Paid</button>
-</form>
+  <p>Exam Fee: ${{ bill.exam_fee }}</p>
+  <p>Drug Fee: ${{ bill.drug_fee }}</p>
+  <p>Total Fee: ${{ bill.total_fee }}</p>
+
+  <form method="POST">
+    {% csrf_token %}
+    <label for="amount_paid">Amount Paid:</label>
+    <input type="text" name="amount_paid" id="amount_paid">
+    <br>
+    <button type="submit">Paid</button>
+  </form>
+{% endblock %}

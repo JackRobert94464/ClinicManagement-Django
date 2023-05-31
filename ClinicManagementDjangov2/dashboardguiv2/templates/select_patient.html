@@ -1,0 +1,12 @@
+<!-- select_patient.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Select a Patient</h1>
+  <ul>
+    {% for patient in patients %}
+      <li><a href="{% url 'dashboardguiv2:collect_fees' patient_id=patient.id %}">{{ patient.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
