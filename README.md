@@ -19,3 +19,10 @@ ClinicManagementDjango is obsolete! Please use version 2 (ClinicManagementDjango
 cd ClinicManagementDjangov2
 
 py manage.py runserver
+
+# To-do
+
+Add CSS styling
+
+Client GUI
+
