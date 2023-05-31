@@ -2,7 +2,6 @@
 
 from django.urls import path
 from . import views
-from django.conf.urls.static import static
 
 app_name = 'dashboardguiv2'
 
@@ -36,5 +35,4 @@ urlpatterns = [
     path('change_regulation_success/', views.change_regulation_success, name='change_regulation_success'),
     path('create_monthly_report/', views.create_monthly_report, name='create_monthly_report'),
     path('view_monthly_report/', views.view_monthly_report, name='view_monthly_report'),
-    
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] 
