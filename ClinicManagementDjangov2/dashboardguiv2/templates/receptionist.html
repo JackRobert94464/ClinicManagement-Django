@@ -3,6 +3,6 @@
 {% block content %}
   <h1>Receptionist Dashboard</h1>
   <!-- Receptionist-specific content -->
-  <a href="{% url 'dashboardguiv2:register_patient' %}" class="btn btn-primary">Sign up patients information</a>
-  <a href="{% url 'dashboardguiv2:setup_appointment' %}" class="btn btn-primary">Set up appointment for patients</a>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='{% url 'dashboardguiv2:register_patient' %}'">Sign up patients information</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='{% url 'dashboardguiv2:setup_appointment' %}'">Set up appointment for patients</button>
 {% endblock %}

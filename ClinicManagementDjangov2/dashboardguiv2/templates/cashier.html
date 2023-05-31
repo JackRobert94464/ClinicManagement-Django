@@ -3,5 +3,5 @@
 {% block content %}
   <h1>Cashier Dashboard</h1>
   <!-- Cashier-specific content -->
-  <a href="{% url 'dashboardguiv2:collect_fees' %}" class="btn btn-primary">Collect medicine and examining fees</a>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='{% url 'dashboardguiv2:collect_fees' %}'">Collect medicine and examining fees</button>
 {% endblock %}

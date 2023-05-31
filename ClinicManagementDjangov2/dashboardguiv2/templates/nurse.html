@@ -3,6 +3,6 @@
 {% block content %}
   <h1>Nurse Dashboard</h1>
   <!-- Nurse-specific content -->
-  <a href="{% url 'dashboardguiv2:edit_record' %}" class="btn btn-primary">Edit patient records</a>
-  <a href="{% url 'dashboardguiv2:view_record' %}" class="btn btn-primary">View patient records</a>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='{% url 'dashboardguiv2:edit_record' %}'">Edit patient records</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='{% url 'dashboardguiv2:view_record' %}'">View patient records</button>
 {% endblock %}
