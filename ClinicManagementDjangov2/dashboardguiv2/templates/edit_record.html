@@ -1,0 +1,21 @@
+<h2>Edit Record</h2>
+<form method="post" action="{% url 'dashboardguiv2:edit_record' %}">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="patient_id" class="form-label">Patient ID</label>
+    <input type="text" class="form-control" id="patient_id" name="patient_id" required>
+  </div>
+  <div class="mb-3">
+    <label for="illness" class="form-label">Illness</label>
+    <input type="text" class="form-control" id="illness" name="illness" required>
+  </div>
+  <div class="mb-3">
+    <label for="date" class="form-label">Date</label>
+    <input type="date" class="form-control" id="date" name="date" required>
+  </div>
+  <div class="mb-3">
+    <label for="symptom" class="form-label">Symptom</label>
+    <textarea class="form-control" id="symptom" name="symptom" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>

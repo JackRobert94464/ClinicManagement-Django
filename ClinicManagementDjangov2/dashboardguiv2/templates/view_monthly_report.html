@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>View Monthly Report</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>Year</th>
+        <th>Number of Patients</th>
+        <th>Drug Usage</th>
+        <th>Revenue</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for report in reports %}
+        <tr>
+          <td>{{ report.month }}</td>
+          <td>{{ report.year }}</td>
+          <td>{{ report.num_patients }}</td>
+          <td>{{ report.drug_usage }}</td>
+          <td>{{ report.revenue }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="5">No monthly reports available.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Clinic App</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboardguiv2/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>My Clinic App</h1>
+        {% if user.is_authenticated %}
+            <p>Logged in as: {{ user.username }}</p>
+            <form action="{% url 'dashboardguiv2:logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        {% endif %}
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Clinic App</p>
+    </footer>
+</body>
+</html>

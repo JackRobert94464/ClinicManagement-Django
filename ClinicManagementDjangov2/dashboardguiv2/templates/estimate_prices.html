@@ -1,0 +1,23 @@
+<h1>Estimate Prices</h1>
+
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  {% if drug %}
+    <h3>Drug Information:</h3>
+    <p><strong>Name:</strong> {{ drug.name }}</p>
+    <p><strong>Price:</strong> {{ drug.price }}</p>
+  {% endif %}
+
+  {% if total_price %}
+    <h3>Total Price:</h3>
+    <p>{{ total_price }}</p>
+  {% endif %}
+
+  {% if error_message %}
+    <p>{{ error_message }}</p>
+  {% endif %}
+
+  <button type="submit">Estimate</button>
+</form>

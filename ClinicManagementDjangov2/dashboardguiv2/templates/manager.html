@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Manager Dashboard</h1>
+  <!-- Manager-specific content -->
+  <a href="{% url 'dashboardguiv2:view_patient' %}" class="btn btn-primary">View personal information</a>
+  <a href="{% url 'dashboardguiv2:change_regulation' %}" class="btn btn-primary">Change procedure or regulation</a>
+  <a href="{% url 'dashboardguiv2:create_monthly_report' %}" class="btn btn-primary">Create monthly report</a>
+{% endblock %}

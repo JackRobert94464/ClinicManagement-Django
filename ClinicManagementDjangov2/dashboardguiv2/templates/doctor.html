@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Doctor Dashboard</h1>
+  <!-- Doctor-specific content -->
+  <a href="{% url 'dashboardguiv2:setup_appointment' %}" class="btn btn-primary">Set up appointment for patients</a>
+  <a href="{% url 'dashboardguiv2:edit_record' %}" class="btn btn-primary">Edit patient records</a>
+  <a href="{% url 'dashboardguiv2:view_record' %}" class="btn btn-primary">View patient records</a>
+  <a href="{% url 'dashboardguiv2:prescribe' %}" class="btn btn-primary">Make a prescription</a>
+  <a href="{% url 'dashboardguiv2:estimate_prices' %}" class="btn btn-primary">Estimate drug prices</a>
+{% endblock %}

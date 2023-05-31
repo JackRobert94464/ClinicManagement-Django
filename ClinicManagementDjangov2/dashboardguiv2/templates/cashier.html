@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Cashier Dashboard</h1>
+  <!-- Cashier-specific content -->
+  <a href="{% url 'dashboardguiv2:collect_fees' %}" class="btn btn-primary">Collect medicine and examining fees</a>
+{% endblock %}

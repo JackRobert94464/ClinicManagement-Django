@@ -1,0 +1,19 @@
+<h2>View Record</h2>
+<form method="post" action="{% url 'dashboardguiv2:view_record' %}">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="patient_id" class="form-label">Patient ID</label>
+    <input type="text" class="form-control" id="patient_id" name="patient_id" required>
+  </div>
+  <button type="submit" class="btn btn-primary">View</button>
+</form>
+{% if error %}
+  <p>{{ error }}</p>
+{% endif %}
+{% if record %}
+  <h3>Medical Report</h3>
+  <p><strong>Patient ID:</strong> {{ record.patient_id }}</p>
+  <p><strong>Illness:</strong> {{ record.illness }}</p>
+  <p><strong>Date:</strong> {{ record.date }}</p>
+  <p><strong>Symptom:</strong> {{ record.symptom }}</p>
+{% endif %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Prescribe</h2>
+  {% if error_message %}
+    <p>{{ error_message }}</p>
+  {% endif %}
+  <form method="post" action="{% url 'dashboardguiv2:prescribe' %}">
+    {% csrf_token %}
+    <label for="patient_id">Patient ID:</label>
+    <input type="text" name="patient_id" required><br>
+    <label for="drug">Drug:</label>
+    <input type="text" name="drug" required><br>
+    <input type="submit" value="Prescribe">
+  </form>
+{% endblock %}

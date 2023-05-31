@@ -1,0 +1,33 @@
+<h2>Setup Appointment</h2>
+{% if error %}
+<p>{{ error }}</p>
+{% endif %}
+<form method="post" action="{% url 'dashboardguiv2:setup_appointment' %}">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="patient_id" class="form-label">Patient ID:</label>
+    <input type="text" class="form-control" id="patient_id" name="patient_id">
+  </div>
+  <button type="submit" class="btn btn-primary">Next</button>
+</form>
+
+{% if patient %}
+<h3>Available Itineraries:</h3>
+{% if itineraries %}
+<form method="post" action="{% url 'dashboardguiv2:complete_appointment' %}">
+  {% csrf_token %}
+  <input type="hidden" name="patient_id" value="{{ patient.id }}">
+  <div class="mb-3">
+    <label for="itinerary" class="form-label">Choose an itinerary:</label>
+    <select class="form-select" id="itinerary" name="itinerary">
+      {% for itinerary in itineraries %}
+      <option value="{{ itinerary }}">{{ itinerary }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Complete</button>
+</form>
+{% else %}
+<p>No available itineraries found.</p>
+{% endif %}
+{% endif %}
