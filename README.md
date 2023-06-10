@@ -29,3 +29,5 @@ Fix cashier Bill object logic
 Client GUI
 
 Fix some routing
+
+Clean code
