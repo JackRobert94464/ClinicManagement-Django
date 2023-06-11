@@ -9,6 +9,17 @@
     <body>
         <h1>Registration Success</h1>
         <p>Your account has been registered successfully.</p>
+        
+        <!-- <form action="{% url 'dashboardguiv2:login' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Login</button>
+        </form> -->
+
+        <button>
+            <a class="active" href="{% url 'dashboardguiv2:login' %}">Start Login</a>
+        </button>
+
     </body>
+
     </html>
 {% endblock %}

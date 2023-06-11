@@ -11,6 +11,9 @@ def index(request):
     services = Service.objects.all()
     return render(request, 'index.html', {'services': services})
 
+def home_page(request):
+    return render(request, 'home_page.html')
+
 def appointment(request):
     if request.method == 'POST':
         # Get the form data
@@ -57,7 +60,7 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     # Redirect to the main screen or login page after logout
-    return redirect('dashboardguiv2:login')
+    return redirect('dashboardguiv2:home_page')
 
 @login_required
 def receptionist_view(request):
