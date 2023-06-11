@@ -2,24 +2,30 @@
 
 {% block content %}
   <h2>Edit Record</h2>
-  <form method="post" action="{% url 'dashboardguiv2:edit_record' %}">
+  <form method="post" action="{% url 'dashboardguiv2:edit_record' %}" id="edit_record">
     {% csrf_token %}
+
     <div class="mb-3">
       <label for="patient_id" class="form-label">Patient ID</label>
-      <input type="text" class="form-control" id="patient_id" name="patient_id" required>
+      <input type="text" class="form-control" id="patient_id" name="patient_id" required style="margin-left: 5px;">
     </div>
+
     <div class="mb-3">
       <label for="illness" class="form-label">Illness</label>
-      <input type="text" class="form-control" id="illness" name="illness" required>
+      <input type="text" class="form-control" id="illness" name="illness" required style="margin-left: 30px;">
     </div>
+
     <div class="mb-3">
       <label for="date" class="form-label">Date</label>
-      <input type="date" class="form-control" id="date" name="date" required>
+      <input type="date" class="form-control" id="date" name="date" required style="margin-left: 42px;">
     </div>
+
     <div class="mb-3">
       <label for="symptom" class="form-label">Symptom</label>
-      <textarea class="form-control" id="symptom" name="symptom" required></textarea>
+      <textarea class="form-control" id="symptom" name="symptom" required style="margin-left: 7px;"></textarea>
     </div>
+
     <button type="submit" class="btn btn-primary">Save</button>
+
   </form>
 {% endblock %}

@@ -5,7 +5,8 @@ from django.contrib.auth.decorators import login_required
 app_name = 'dashboardguiv2'
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.home_page, name='home_page'),
+    path('dashboard/', views.index, name='index'),
     path('appointment/', views.appointment, name='appointment'),
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),

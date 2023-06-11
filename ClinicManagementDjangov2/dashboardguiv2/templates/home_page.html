@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+  <h1>Welcome to the Clinic</h1>
+
+  <!-- <div class="nav" id="nav">
+    <form action="{% url 'dashboardguiv2:login' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Login</button>
+    </form>
+
+    <form action="{% url 'dashboardguiv2:register' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Register</button>
+    </form>
+
+    <button type="submit">About Us</button> -->
+
+    <div class="topnav">
+        <a class="active" href="{% url 'dashboardguiv2:login' %}">Go to work</a>
+
+        <a href="#news">New notification</a>
+
+        <a href="#contact">Contact</a>
+
+        <a href="#about">About Us</a>
+    </div>
+     
+    <div style="padding-left:16px">
+    </div>
+
+
+
+  </div>
+
+</div>
+{% endblock %}
