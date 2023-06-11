@@ -8,9 +8,14 @@
   <form method="post" action="{% url 'dashboardguiv2:prescribe' %}">
     {% csrf_token %}
     <label for="patient_id">Patient ID:</label>
+
     <input type="text" name="patient_id" required><br>
+
     <label for="drug">Drug:</label>
-    <input type="text" name="drug" required><br>
-    <input type="submit" value="Prescribe">
+
+    <input type="text" name="drug" required style="margin-left: 35px;"><br>
+
+    <input type="submit" class="btn-prescribe" value="Prescribe" style="margin-top: 10px;">
+
   </form>
 {% endblock %}

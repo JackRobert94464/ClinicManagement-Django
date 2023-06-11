@@ -107,3 +107,29 @@ button a {
     color: white;
     text-decoration: none;
 }
+
+form > input {
+    margin-top: 10px;
+}
+
+form > input.btn-prescribe {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+
+form > input.btn-prescribe:hover {
+    background-color: rgb(71, 213, 88);
+}
+
+form > div {
+    margin-top: 10px;
+} 
