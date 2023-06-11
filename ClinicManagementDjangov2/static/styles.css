@@ -36,6 +36,10 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: rgb(71, 213, 88);
+}
+
 main {
     padding: 20px;
 }
@@ -50,4 +54,17 @@ footer {
     padding-top: 10px;
     position: absolute;
     bottom: 0;
+}
+
+.form-control#password {
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.btn.btn-primary {
+    margin-top: 20px;
+} 
+
+.btn:hover {
+    background-color: aquamarine;
 }
