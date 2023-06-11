@@ -6,11 +6,6 @@ class PatientRegistrationForm(forms.ModelForm):
         model = Patient
         fields = ['name', 'date_of_birth']  # Add other fields here
 
-        widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control name'}),
-            'date_of_birth':forms.TextInput(attrs={'class': 'form-control date_of_birth'})
-        }
-
 from django import forms
 
 class EstimatePriceForm(forms.Form):

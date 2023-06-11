@@ -4,17 +4,7 @@
   <h2>Register Patient</h2>
   <form method="post" action="">
     {% csrf_token %}
-    <!-- {{ form.as_p }} -->
-    <p>
-      <label for="id_name">Name:</label>
-      <input type="text" name="name" class="form-control name" maxlength="100" required id="id_name" style="margin-left: 45px;">    
-    </p>
- 
-    <p>
-      <label for="id_date_of_birth">Date of birth:</label>
-      <input type="text" name="date_of_birth" class="form-control date_of_birth" required id="id_date_of_birth"> 
-    </p>
-
+    {{ form.as_p }}
     <button type="submit" class="btn btn-primary">Register</button>
   </form>
 {% endblock %}

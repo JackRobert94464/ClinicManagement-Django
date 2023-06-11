@@ -9,21 +9,19 @@
     {% csrf_token %}
     <div class="mb-3">
       <label for="patient_id" class="form-label">Patient ID:</label>
-      <input type="text" class="form-control" id="patient_id" name="patient_id" style="margin-left: 10px;">
+      <input type="text" class="form-control" id="patient_id" name="patient_id">
     </div>
     <div class="mb-3">
       <label for="name" class="form-label">Name:</label>
-      <input type="text" class="form-control" id="name" name="name" style="margin-left: 38px;">
+      <input type="text" class="form-control" id="name" name="name">
     </div>
     <button type="submit" class="btn btn-primary">View Information</button>
   </form>
 
   {% if patient %}
-
   <h3>Patient Information:</h3>
   <p>Name: {{ patient.name }}</p>
   <p>Date of Birth: {{ patient.date_of_birth }}</p>
   <!-- Display other patient information fields as needed -->
-
   {% endif %}
 {% endblock %}
