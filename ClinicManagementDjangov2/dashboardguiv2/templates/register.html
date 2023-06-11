@@ -10,7 +10,49 @@
         <h1>Register</h1>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            <!-- {{ form.as_p }} -->
+
+            <ul class="errorlist"><li>This field is required.</li></ul>
+            <p>
+                <label for="id_username">Username:</label>
+                <input type="text" name="username" maxlength="150" required id="id_username">
+            </p>
+
+            <ul class="errorlist"><li>This field is required.</li></ul>
+            <p>
+                <label for="id_email">Email:</label>
+                <input type="email" name="email" required id="id_email" style="margin-left: 33px;">
+            </p>
+
+            <ul class="errorlist"><li>This field is required.</li></ul>
+            <p>
+                <label for="id_password">Password:</label>
+                <input type="password" name="password" required id="id_password">
+            </p>
+
+            <ul class="errorlist"><li>This field is required.</li></ul>
+            <p>
+                <label for="id_role">Role:</label>
+
+                <select name="role" id="id_role" style="margin-left: 33px;">
+                    
+                <option value="receptionist">Receptionist</option>
+
+                <option value="manager">Manager</option>
+
+                <option value="nurse">Nurse</option>
+
+                <option value="doctor">Doctor</option>
+
+                <option value="cashier">Cashier</option>
+
+                <option value="admin">Admin</option>
+
+                <option value="user">User</option>
+
+                </select>
+            </p>
+
             <button type="submit">Register</button>
         </form>
     </body>

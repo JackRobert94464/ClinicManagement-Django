@@ -4,7 +4,37 @@
   <h2>Create Monthly Report</h2>
   <form method="post" action="{% url 'dashboardguiv2:create_monthly_report' %}">
     {% csrf_token %}
-    {{ form.as_p }}
+    <!-- {{ form.as_p }} -->
+
+    <p>
+        <label for="id_month">Month:</label>
+        <input type="number" name="month" required id="id_month" style="margin-left: 49px;">
+    </p>
+
+  
+    <p>
+        <label for="id_year">Year:</label>
+        <input type="number" name="year" required id="id_year" style="margin-left: 61px;">  
+    </p>
+
+    
+    <p>
+        <label for="id_num_patients">Num patients:</label>
+        <input type="number" name="num_patients" required id="id_num_patients"> 
+    </p>
+
+    
+    <p>
+        <label for="id_drug_usage">Drug usage:</label>
+        <textarea name="drug_usage" cols="40" rows="10" required id="id_drug_usage" style="margin-left: 13px;"></textarea>
+    </p>
+
+    
+    <p>
+        <label for="id_revenue">Revenue:</label>
+        <input type="number" name="revenue" step="0.01" required id="id_revenue" style="margin-left: 30px;">
+    </p>
+
     <button type="submit">Submit</button>
   </form>
 {% endblock %}
